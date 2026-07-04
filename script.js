@@ -23,3 +23,6 @@ window.onload = function () {
     }
   };
 };
+function viewJob(job) {
+  alert(job);
+}
