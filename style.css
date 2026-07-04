@@ -1,15 +1,78 @@
-html::before {
-  content: 'CodePen ♥ The Web';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  margin: auto;
-  width: fit-content;
-  height: fit-content;
-  font-family: monospace;
-  opacity: 0.6;
-  background: rebeccapurple;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #333;
+}
+
+header {
+  background: #0057b8;
   color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+nav {
+  background: #003d82;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px 15px;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero input {
+  width: 70%;
+  max-width: 350px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.hero button {
+  padding: 12px 20px;
+  margin-left: 8px;
+  background: #0057b8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card h3 {
+  color: #0057b8;
+}
+
+footer {
+  background: #003d82;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
 }
