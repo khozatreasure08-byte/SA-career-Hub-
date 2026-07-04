@@ -44,3 +44,28 @@ function createCV() {
     <p>Your professional CV has been started. More sections (Education, Skills, Experience) are coming soon.</p>
   `;
 }
+function createCV() {
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    if (fullName === "" || email === "" || phone === "") {
+        alert("Please fill in all the fields.");
+        return;
+    }
+
+    const cvText =
+`SA CAREER HUB CV
+
+Full Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+
+Thank you for using SA Career Hub.`;
+
+    const blob = new Blob([cvText], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = fullName + "-CV.txt";
+    link.click();
+                          }
