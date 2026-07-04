@@ -26,3 +26,21 @@ window.onload = function () {
 function viewJob(job) {
   alert(job);
 }
+function createCV() {
+  const name = document.getElementById("fullName").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+
+  if (name === "" || email === "" || phone === "") {
+    alert("Please fill in all the fields.");
+    return;
+  }
+
+  document.getElementById("cvResult").innerHTML = `
+    <h3>Your CV Preview</h3>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    <p>Your professional CV has been started. More sections (Education, Skills, Experience) are coming soon.</p>
+  `;
+}
