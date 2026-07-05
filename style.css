@@ -205,3 +205,24 @@ header img {
 .stat-box p{
     margin-top:10px;
 }
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin-top:15px;
+}
+
+.categories button{
+    background:#0077cc;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.categories button:hover{
+    background:#005fa3;
+}
