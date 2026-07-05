@@ -149,3 +149,23 @@ footer {
 .job button {
   margin-top: 10px;
 }
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode input {
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+}
+
+.dark-mode button {
+    background-color: #444;
+    color: white;
+}
