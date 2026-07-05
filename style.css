@@ -170,8 +170,8 @@ footer {
     color: white;
 }
 .logo {
-    width: 220px;
-    max-width: 90%;
+    width: 140px;
+    height: auto;
     display: block;
-    margin: 0 auto 20px;
+    margin: 10px auto;
 }
