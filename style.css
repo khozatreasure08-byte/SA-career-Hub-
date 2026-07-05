@@ -175,3 +175,8 @@ footer {
     display: block;
     margin: 10px auto;
 }
+header img {
+    width: 180px;
+    max-width: 90%;
+    height: auto;
+}
