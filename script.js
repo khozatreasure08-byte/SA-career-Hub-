@@ -61,6 +61,7 @@ Thank you for using SA Career Hub.`;
     link.click();
    function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
+   }
    }                       }
 function downloadCV() {
     const name = document.getElementById("name").value;
