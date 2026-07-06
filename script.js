@@ -57,7 +57,7 @@ Thank you for using SA Career Hub.`;
     const blob = new Blob([cvText], { type: "text/plain" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = fullName + "-CV.txt";
+    link.download = name + "-CV.txt";
     link.click();
    function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
