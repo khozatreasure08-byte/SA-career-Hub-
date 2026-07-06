@@ -71,3 +71,36 @@ Thank you for using SA Career Hub.`;
    function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
    }                       }
+function downloadCV() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const education = document.getElementById("education").value;
+    const experience = document.getElementById("experience").value;
+    const skills = document.getElementById("skills").value;
+
+    const cv = `
+SA CAREER HUB CV
+
+Name: ${name}
+
+Email: ${email}
+
+Phone: ${phone}
+
+Education:
+${education}
+
+Work Experience:
+${experience}
+
+Skills:
+${skills}
+`;
+
+    const blob = new Blob([cv], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "My_CV.txt";
+    link.click();
+  }
