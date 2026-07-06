@@ -64,6 +64,8 @@ Thank you for using SA Career Hub.`;
    }
    }                       }
 function downloadCV() {
+    alert("Download function is working!");
+
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
@@ -75,9 +77,7 @@ function downloadCV() {
 SA CAREER HUB CV
 
 Name: ${name}
-
 Email: ${email}
-
 Phone: ${phone}
 
 Education:
@@ -94,5 +94,8 @@ ${skills}
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "My_CV.txt";
+    document.body.appendChild(link);
     link.click();
-  }
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
+}
