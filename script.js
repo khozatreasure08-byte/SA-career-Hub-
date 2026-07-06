@@ -48,7 +48,7 @@ function createCV() {
     const cvText =
 `SA CAREER HUB CV
 
-Full Name: ${fullName}
+Full Name: ${name}
 Email: ${email}
 Phone: ${phone}
 
