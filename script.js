@@ -43,16 +43,7 @@ function createCV() {
     <p><strong>Phone:</strong> ${phone}</p>
     <p>Your professional CV has been started. More sections (Education, Skills, Experience) are coming soon.</p>
   `;
-}
-function createCV() {
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
 
-    if (fullName === "" || email === "" || phone === "") {
-        alert("Please fill in all the fields.");
-        return;
-    }
 
     const cvText =
 `SA CAREER HUB CV
