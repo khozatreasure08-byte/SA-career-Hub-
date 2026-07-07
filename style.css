@@ -235,7 +235,7 @@ header img {
     box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-body.dark .career-tip{
+body.dark-mode .career-tip{
     background:#222;
     color:white;
 }
