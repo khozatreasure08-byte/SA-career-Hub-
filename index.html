@@ -1,289 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SA Career Hub</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Career Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <img src="b146e53d-516e-44bf-bb7c-bf73e4a77586.png" alt="SA Career Hub Logo" class="logo">
-  <p>Your Gateway to Jobs, Learnerships, Internships and Bursaries</p>
+    <img src="logo.png" class="logo" alt="SA Career Hub Logo">
+
+    <h1>🇿🇦 SA Career Hub</h1>
+
+    <p>Your Gateway to Jobs, Learnerships, Internships & Bursaries</p>
+
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
 </header>
 
 <nav>
-  <a href="#">Home</a>
-  <a href="jobs.html">Jobs</a>
-  <a href="cvbuilder.html">CV Builder</a>
-  <a href="learnerships.html">Learnerships</a>
-  <a href="internships.html">Internships</a>
-  <a href="bursaries.html">Bursaries</a>
-  <a href="#">Career Tips</a>
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="cvbuilder.html">CV Builder</a>
+    <a href="learnerships.html">Learnerships</a>
+    <a href="internships.html">Internships</a>
+    <a href="bursaries.html">Bursaries</a>
+    <a href="careertips.html">Career Tips</a>
 </nav>
-<button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
 <section class="hero">
-  <h2>Your Future Starts Here 🇿🇦</h2>
-  <p>
-Find jobs, internships, learnerships, bursaries and build a professional CV — all in one place.
-  </p>
 
-  <input type="text" placeholder="Search jobs...">
-  <button>Search</button>
+    <h2>Find Your Dream Job Today</h2>
+
+    <input
+        type="text"
+        id="jobSearch"
+        placeholder="Search jobs..."
+    >
+
+    <button onclick="searchJobs()">Search</button>
+
 </section>
-  <section class="stats">
-    <div class="stat-box">
-        <h2>1000+</h2>
-        <p>Jobs</p>
-    </div>
 
-    <div class="stat-box">
-        <h2>500+</h2>
-        <p>Learnerships</p>
-    </div>
+<section class="cards">
 
-    <div class="stat-box">
-        <h2>300+</h2>
-        <p>Bursaries</p>
-    </div>
-  </section>
-  <section class="card">
-    <h2>⭐ Why Choose SA Career Hub?</h2>
-<section class="card">
-    <h2>📂 Browse by Category</h2>
-
-    <div class="categories">
-        <button>💼 General Jobs</button>
-        <button>🎓 Learnerships</button>
-        <button>🎯 Internships</button>
-        <button>🎓 Bursaries</button>
-        <button>🏛 Government Jobs</button>
-        <button>💻 IT Jobs</button>
-    </div>
-</section>
-    <ul>
-        <li>✅ Free CV Builder</li>
-        <li>✅ Latest Jobs Updated Daily</li>
-        <li>✅ Learnerships & Internships</li>
-        <li>✅ Bursary Opportunities</li>
-        <li>✅ Easy to Use on Mobile</li>
-    </ul>
-  </section>
-<div class="stats">
-    <div class="card">
-        <h3>1000+</h3>
-        <p>Jobs</p>
-    </div>
-
-    <div class="card">
-        <h3>500+</h3>
-        <p>Learnerships</p>
-    </div>
-
-    <div class="card">
-        <h3>300+</h3>
-        <p>Bursaries</p>
-    </div>
+<div class="card">
+<h3>📄 CV Builder</h3>
+<p>Create and download your CV.</p>
+<a href="cvbuilder.html">Open</a>
 </div>
-<section class="features">
 
-  <div class="card">
-    <h3>💼 Jobs</h3>
-    <p>Browse the latest job opportunities.</p>
-  </div>
+<div class="card">
+<h3>💼 Jobs</h3>
+<p>Latest South African jobs.</p>
+<a href="jobs.html">Browse</a>
+</div>
 
-  <div class="card">
-    <h3>📄 CV Builder</h3>
-    <p>Create a professional CV for free.</p>
-  </div>
+<div class="card">
+<h3>🎓 Learnerships</h3>
+<p>Government and private learnerships.</p>
+<a href="learnerships.html">View</a>
+</div>
 
-  <div class="card">
-    <h3>🎓 Learnerships</h3>
-    <p>Find learnership programmes.</p>
-  </div>
+<div class="card">
+<h3>🎒 Bursaries</h3>
+<p>Funding opportunities.</p>
+<a href="bursaries.html">Explore</a>
+</div>
 
-  <div class="card">
-    <h3>🎓 Bursaries</h3>
-    <p>Discover funding opportunities.</p>
-  </div>
+<div class="card">
+<h3>🎤 Interview Tips</h3>
+<p>Prepare for interviews.</p>
+<a href="careertips.html">Read</a>
+</div>
 
-  <div class="card">
-    <h3>💼 Internships</h3>
-    <p>Kick-start your career.</p>
-  </div>
-
-  <div class="card">
-    <h3>📢 Career Tips</h3>
-    <p>Interview and CV advice.</p>
-  </div>
+<div class="card">
+<h3>❤️ Saved Jobs</h3>
+<p>Coming soon.</p>
+</div>
 
 </section>
-<section class="card">
-  <h2>💼 Latest Internships</h2>
 
-  <div class="job">
-    <h3>IT Internship</h3>
-    <p><strong>Company:</strong> MTN South Africa</p>
-    <p><strong>Location:</strong> Johannesburg</p>
-    <button>Apply Soon</button>
-  </div>
+<footer>
 
-  <div class="job">
-    <h3>Finance Internship</h3>
-    <p><strong>Company:</strong> Standard Bank</p>
-    <p><strong>Location:</strong> Cape Town</p>
-    <button>Apply Soon</button>
-  </div>
-</section>
-  <section class="card">
-  <h2>💡 Career Tips</h2>
+<p>© 2026 SA Career Hub</p>
 
-  <ul>
-    <li>✔ Keep your CV updated.</li>
-    <li>✔ Prepare for interviews before applying.</li>
-    <li>✔ Apply to opportunities every week.</li>
-    <li>✔ Learn new digital skills.</li>
-    <li>✔ Network with professionals on LinkedIn.</li>
-  </ul>
-  </section>
-
-
-<section class="card">
-  <h2>🔥 Featured Jobs</h2>
-<section class="card">
-  <h2>📄 Free CV Builder</h2>
-<section class="card">
-  <h2>🎓 Latest Learnerships</h2>
-
-  <div class="job">
-    <h3>Banking Learnership</h3>
-    <p><strong>Company:</strong> Capitec Bank</p>
-    <p><strong>Location:</strong> South Africa</p>
-    <button>Apply Soon</button>
-  </div>
-
-  <div class="job">
-    <h3>Retail Learnership</h3>
-    <p><strong>Company:</strong> Pick n Pay</p>
-    <p><strong>Location:</strong> Nationwide</p>
-    <button>Apply Soon</button>
-  </div>
-</section>
-  <p>Create your professional CV in minutes.</p>
-
-  <input type="text" id="fullName" placeholder="Full Name"><br><br>
-
-  <input type="email" id="email" placeholder="Email Address"><br><br>
-
-  <input type="text" id="phone" placeholder="Phone Number"><br><br>
-
-  <button onclick="createCV()">Create My CV</button>
-
-  <div id="cvResult"></div>
-</section>
-  <div class="job">
-    <h3>Retail Assistant</h3>
-    <p><strong>Company:</strong> Shoprite</p>
-    <p><strong>Location:</strong> Johannesburg</p>
-    <button onclick="viewJob('Retail Assistant at Shoprite, Johannesburg')">View Job</button>
-  </div>
-
-  <hr>
-
-  <div class="job">
-    <h3>General Worker</h3>
-    <p><strong>Company:</strong> Transnet</p>
-    <p><strong>Location:</strong> Durban</p>
-    <button onclick="viewJob('General Worker at Transnet, Durban')">View Job</button>
-  </div>
-
-  <hr>
-
-  <div class="job">
-    <h3>Administrator</h3>
-    <p><strong>Company:</strong> Department of Health</p>
-    <p><strong>Location:</strong> Pretoria</p>
-    <button onclick="viewJob('Administrator at Department of Health, Pretoria')">View Job</button>
-  </div>
-</section>
-<script src="script.js"></script>
-  <section class="card">
-    <h2>📢 Latest Opportunities</h2>
-<section class="card">
-  <section class="card">
-    <h2>🏢 Featured Employers</h2>
-
-    <div class="job">
-        <h3>Shoprite</h3>
-        <p>Retail • Jobs • Learnerships</p>
-    </div>
-
-    <div class="job">
-        <h3>Transnet</h3>
-        <p>Logistics • Engineering • General Work</p>
-    </div>
-
-    <div class="job">
-        <h3>Eskom</h3>
-        <p>Engineering • Apprenticeships • Bursaries</p>
-    </div>
-
-    <div class="job">
-        <h3>Department of Health</h3>
-        <p>Healthcare • Administration • Internships</p>
-    </div>
-  </section>
-    <h2>ℹ️ About SA Career Hub</h2>
-<section class="card">
-    <h2>📞 Contact Us</h2>
-
-    <p><strong>Email:</strong> support@sacareerhub.co.za</p>
-
-    <p><strong>Phone:</strong> +27 76 370 8393</p>
-
-    <p><strong>Location:</strong> South Africa</p>
-
-    <p>We are here to help you find your next opportunity.</p>
-</section>
-    <p>
-        SA Career Hub helps South Africans find jobs, internships,
-        learnerships and bursaries in one place.
-    </p>
-
-    <p>
-        Our mission is to make finding opportunities easier for everyone,
-        whether you are a student, graduate or experienced job seeker.
-    </p>
-</section>
-    <div class="job">
-        <h3>General Worker</h3>
-        <p><strong>Company:</strong> Transnet</p>
-        <p><strong>Location:</strong> Durban</p>
-        <p><strong>Closing Date:</strong> 18 July 2026</p>
-        <button>Apply Now</button>
-    </div>
-
-    <div class="job">
-        <h3>Cashier</h3>
-        <p><strong>Company:</strong> Shoprite</p>
-        <p><strong>Location:</strong> Johannesburg</p>
-        <p><strong>Closing Date:</strong> 22 July 2026</p>
-        <button>Apply Now</button>
-    </div>
-
-    <div class="job">
-        <h3>Administration Clerk</h3>
-        <p><strong>Company:</strong> Department of Health</p>
-        <p><strong>Location:</strong> Pretoria</p>
-        <p><strong>Closing Date:</strong> 30 July 2026</p>
-        <button>Apply Now</button>
-    </div>
-  </section>
-footer>
-  <p>© 2026 SA Career Hub. All Rights Reserved.</p>
 </footer>
-  <script src="script.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
