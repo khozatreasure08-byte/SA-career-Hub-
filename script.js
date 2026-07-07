@@ -158,3 +158,79 @@ function newCareerTip(){
 }
 
 newCareerTip();
+// ===============================
+// Job Tracker
+// ===============================
+
+function saveJob() {
+
+    const company = document.getElementById("company");
+    const position = document.getElementById("position");
+    const status = document.getElementById("status");
+
+    if (!company || !position || !status) {
+        return; // Not on the Job Tracker page
+    }
+
+    if (company.value.trim() === "" || position.value.trim() === "") {
+        alert("Please enter the company and position.");
+        return;
+    }
+
+    const jobs = JSON.parse(localStorage.getItem("jobTracker")) || [];
+
+    jobs.push({
+        company: company.value,
+        position: position.value,
+        status: status.value
+    });
+
+    localStorage.setItem("jobTracker", JSON.stringify(jobs));
+
+    company.value = "";
+    position.value = "";
+
+    displayJobs();
+}
+
+function displayJobs() {
+
+    const jobList = document.getElementById("jobList");
+
+    if (!jobList) {
+        return; // Not on the Job Tracker page
+    }
+
+    const jobs = JSON.parse(localStorage.getItem("jobTracker")) || [];
+
+    jobList.innerHTML = "";
+
+    jobs.forEach((job, index) => {
+
+        jobList.innerHTML += `
+        <div class="job-item">
+            <h3>${job.company}</h3>
+            <p><strong>Position:</strong> ${job.position}</p>
+            <p><strong>Status:</strong> ${job.status}</p>
+
+            <button onclick="deleteJob(${index})">
+                Delete
+            </button>
+        </div>
+        `;
+    });
+}
+
+function deleteJob(index) {
+
+    const jobs = JSON.parse(localStorage.getItem("jobTracker")) || [];
+
+    jobs.splice(index, 1);
+
+    localStorage.setItem("jobTracker", JSON.stringify(jobs));
+
+    displayJobs();
+}
+
+// Automatically load saved jobs
+displayJobs();
