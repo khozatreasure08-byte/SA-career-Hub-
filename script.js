@@ -213,6 +213,7 @@ function displayJobs() {
             <h3>${job.company}</h3>
             <p><strong>Position:</strong> ${job.position}</p>
             <p>
+            <p><strong>Applied:</strong> ${job.date}</p>
 <strong>Status:</strong>
 <span class="status ${job.status.toLowerCase()}">
 ${job.status}
