@@ -4,7 +4,7 @@
 
 // Wait until the page is fully loaded
 window.onload = function () {
-
+displayJobs();
     // Homepage search
     const button = document.querySelector(".hero button");
     const input = document.querySelector(".hero input");
