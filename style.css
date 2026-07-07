@@ -226,3 +226,24 @@ header img {
 .categories button:hover{
     background:#005fa3;
 }
+.career-tip{
+    background:#ffffff;
+    margin:20px;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+body.dark .career-tip{
+    background:#222;
+    color:white;
+}
+
+.career-tip button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+  }
