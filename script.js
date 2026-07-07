@@ -180,10 +180,11 @@ function saveJob() {
     const jobs = JSON.parse(localStorage.getItem("jobTracker")) || [];
 
     jobs.push({
-        company: company.value,
-        position: position.value,
-        status: status.value
-    });
+    company: company.value,
+    position: position.value,
+    status: status.value,
+    date: new Date().toLocaleDateString()
+});
 
     localStorage.setItem("jobTracker", JSON.stringify(jobs));
 
