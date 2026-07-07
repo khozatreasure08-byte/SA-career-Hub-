@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Tracker | SA Career Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>📋 Job Application Tracker</h1>
+<p>Keep track of every application.</p>
+</header>
+
+<main>
+
+<input type="text" id="company" placeholder="Company Name">
+
+<input type="text" id="position" placeholder="Job Position">
+
+<select id="status">
+<option>Pending</option>
+<option>Interview</option>
+<option>Hired</option>
+<option>Rejected</option>
+</select>
+
+<button onclick="saveJob()">Save Job</button>
+
+<h2>Your Applications</h2>
+
+<div id="jobList"></div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
