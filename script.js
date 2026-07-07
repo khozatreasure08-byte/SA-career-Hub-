@@ -236,8 +236,7 @@ function deleteJob(index) {
 
     localStorage.setItem("jobTracker", JSON.stringify(jobs));
 
-    displayJobs();
-}
+    
+
 
 // Automatically load saved jobs
-displayJobs();
