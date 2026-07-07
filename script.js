@@ -211,7 +211,12 @@ function displayJobs() {
         <div class="job-item">
             <h3>${job.company}</h3>
             <p><strong>Position:</strong> ${job.position}</p>
-            <p><strong>Status:</strong> ${job.status}</p>
+            <p>
+<strong>Status:</strong>
+<span class="status ${job.status.toLowerCase()}">
+${job.status}
+</span>
+</p>
 
             <button onclick="deleteJob(${index})">
                 Delete
