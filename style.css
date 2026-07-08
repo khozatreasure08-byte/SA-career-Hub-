@@ -341,3 +341,40 @@ margin-bottom:10px;
 .stat-card p{
 font-size:1rem;
 }
+.featured-jobs{
+padding:60px 20px;
+text-align:center;
+}
+
+.featured-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.featured-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.dark-mode .featured-card{
+background:#222;
+color:white;
+}
+
+.featured-card:hover{
+transform:translateY(-8px);
+}
+
+.featured-card button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
