@@ -1,58 +1,177 @@
-// ===============================
-// SA Career Hub - script.js
-// ===============================
+// ======================================================
+// SA CAREER HUB
+// Version 2.0
+// Part 1/3
+// ======================================================
 
-// Wait until the page is fully loaded
-window.onload = function () {
-displayJobs();
-    // Homepage search
+// Wait until page loads
+document.addEventListener("DOMContentLoaded", () => {
+
+    initializeDarkMode();
+    initializeHomeSearch();
+    initializeCareerTips();
+    initializeJobTracker();
+
+});
+
+// ======================================================
+// DARK MODE
+// ======================================================
+
+function initializeDarkMode() {
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+}
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+
+}
+
+// ======================================================
+// HOME SEARCH
+// ======================================================
+
+function initializeHomeSearch() {
+
     const button = document.querySelector(".hero button");
     const input = document.querySelector(".hero input");
 
-    if (button && input) {
-        button.onclick = function () {
-            const search = input.value.trim().toLowerCase();
+    if (!button || !input) return;
 
-            const jobs = [
-                "shoprite",
-                "checkers",
-                "pick n pay",
-                "transnet",
-                "eskom",
-                "saps",
-                "administrator",
-                "general worker",
-                "cashier",
-                "driver",
-                "security",
-                "receptionist"
-            ];
+    button.addEventListener("click", searchJobs);
 
-            if (search === "") {
-                alert("Please enter a job to search.");
-                return;
-            }
+    input.addEventListener("keypress", function (e) {
 
-            if (jobs.includes(search)) {
-                alert("✅ Results found for: " + search);
-            } else {
-                alert("❌ No matching jobs found.");
-            }
-        };
+        if (e.key === "Enter") {
+            searchJobs();
+        }
+
+    });
+
+}
+
+function searchJobs() {
+
+    const input = document.querySelector(".hero input");
+
+    if (!input) return;
+
+    const value = input.value.trim().toLowerCase();
+
+    if (value === "") {
+
+        alert("Please enter a job title.");
+
+        return;
+
     }
-};
 
-// View Job
-function viewJob(job) {
-    alert(job);
+    const jobs = [
+
+        "shoprite",
+        "checkers",
+        "pick n pay",
+        "woolworths",
+        "spar",
+        "dischem",
+        "clicks",
+        "transnet",
+        "eskom",
+        "saps",
+        "department of health",
+        "administrator",
+        "cashier",
+        "driver",
+        "cleaner",
+        "general worker",
+        "security",
+        "receptionist",
+        "teacher",
+        "call centre",
+        "warehouse",
+        "packer"
+
+    ];
+
+    if (jobs.includes(value)) {
+
+        alert("✅ Jobs found for: " + value);
+
+    } else {
+
+        alert("❌ No jobs found. Try another keyword.");
+
+    }
+
 }
 
-// Dark Mode
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+// ======================================================
+// CAREER TIPS
+// ======================================================
+
+const careerTips = [
+
+    "Tailor your CV for every application.",
+
+    "Always keep your phone number active.",
+
+    "Apply for jobs every day.",
+
+    "Practice interview questions weekly.",
+
+    "Improve one new skill every month.",
+
+    "Keep your CV to two pages.",
+
+    "Proofread your CV before sending it.",
+
+    "Create a professional email address.",
+
+    "Follow companies on LinkedIn.",
+
+    "Never stop learning."
+
+];
+
+function initializeCareerTips() {
+
+    const element = document.getElementById("careerTip");
+
+    if (!element) return;
+
+    newCareerTip();
+
 }
 
-// CV Preview (for future upgrades)
+function newCareerTip() {
+
+    const element = document.getElementById("careerTip");
+
+    if (!element) return;
+
+    const random = Math.floor(Math.random() * careerTips.length);
+
+    element.textContent = careerTips[random];
+
+}
+
+// ======================================================
+// CV BUILDER
+// ======================================================
+
 function createCV() {
 
     const fullName = document.getElementById("fullName");
@@ -60,186 +179,30 @@ function createCV() {
     const phone = document.getElementById("phone");
     const cvResult = document.getElementById("cvResult");
 
-    if (!fullName || !email || !phone || !cvResult) {
-        return;
-    }
+    if (!fullName || !email || !phone || !cvResult) return;
 
     if (
-        fullName.value === "" ||
-        email.value === "" ||
-        phone.value === ""
+        fullName.value.trim() === "" ||
+        email.value.trim() === "" ||
+        phone.value.trim() === ""
     ) {
-        alert("Please fill in all the fields.");
+
+        alert("Please complete all required fields.");
+
         return;
+
     }
 
     cvResult.innerHTML = `
+
         <h3>Your CV Preview</h3>
+
         <p><strong>Name:</strong> ${fullName.value}</p>
+
         <p><strong>Email:</strong> ${email.value}</p>
+
         <p><strong>Phone:</strong> ${phone.value}</p>
+
     `;
-}
 
-// Download CV
-function downloadCV() {
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const education = document.getElementById("education").value;
-    const experience = document.getElementById("experience").value;
-    const skills = document.getElementById("skills").value;
-
-    if (
-        name === "" ||
-        email === "" ||
-        phone === ""
-    ) {
-        alert("Please fill in Name, Email and Phone.");
-        return;
-    }
-
-    const cv = `
-SA CAREER HUB CV
-
-==============================
-
-Name: ${name}
-
-Email: ${email}
-
-Phone: ${phone}
-
-Education
--------------------------
-${education}
-
-Work Experience
--------------------------
-${experience}
-
-Skills
--------------------------
-${skills}
-
-Generated by SA Career Hub
-`;
-
-    const blob = new Blob([cv], {
-        type: "text/plain"
-    });
-
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `${name}-CV.txt`;
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    URL.revokeObjectURL(link.href);
-
-    alert("✅ CV downloaded successfully!");
-}
-const tips = [
-"Tailor your CV for every job.",
-"Apply for jobs every day.",
-"Keep your phone number active.",
-"Practice interview questions.",
-"Learn a new skill every month.",
-"Create a LinkedIn profile.",
-"Always proofread your CV."
-];
-
-function newCareerTip(){
-    const random = Math.floor(Math.random()*tips.length);
-    document.getElementById("careerTip").textContent = tips[random];
-}
-
-newCareerTip();
-// ===============================
-// Job Tracker
-// ===============================
-
-function saveJob() {
-
-    const company = document.getElementById("company");
-    const position = document.getElementById("position");
-    const status = document.getElementById("status");
-
-    if (!company || !position || !status) {
-        return; // Not on the Job Tracker page
-    }
-
-    if (company.value.trim() === "" || position.value.trim() === "") {
-        alert("Please enter the company and position.");
-        return;
-    }
-
-    const jobs = JSON.parse(localStorage.getItem("jobTracker")) || [];
-
-    jobs.push({
-    company: company.value,
-    position: position.value,
-    status: status.value,
-    date: new Date().toLocaleDateString()
-});
-
-    localStorage.setItem("jobTracker", JSON.stringify(jobs));
-
-    company.value = "";
-    position.value = "";
-
-    displayJobs();
-}
-
-function displayJobs() {
-
-    const jobList = document.getElementById("jobList");
-
-    if (!jobList) {
-        return; // Not on the Job Tracker page
-    }
-
-    const jobs = JSON.parse(localStorage.getItem("jobTracker")) || [];
-
-    jobList.innerHTML = "";
-
-    jobs.forEach((job, index) => {
-
-        jobList.innerHTML += `
-        <div class="job-item">
-            <h3>${job.company}</h3>
-            <p><strong>Position:</strong> ${job.position}</p>
-            <p>
-            <p><strong>Applied:</strong> ${job.date}</p>
-<strong>Status:</strong>
-<span class="status ${job.status.toLowerCase()}">
-${job.status}
-</span>
-</p>
-
-            <button onclick="deleteJob(${index})">
-                Delete
-            </button>
-        </div>
-        `;
-    });
-}
-
-function deleteJob(index) {
-
-    const jobs = JSON.parse(localStorage.getItem("jobTracker")) || [];
-
-    jobs.splice(index, 1);
-
-    localStorage.setItem("jobTracker", JSON.stringify(jobs));
-
-    
-
-
-// Automatically load saved jobs
-document.addEventListener("DOMContentLoaded", function () {
-    displayJobs();
-});
+        }
