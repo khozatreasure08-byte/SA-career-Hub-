@@ -293,3 +293,14 @@ input,select{
 .rejected{
     background:red;
 }
+/* Your existing CSS */
+
+.footer{
+    ...
+}
+
+/* 👇 Paste the Dashboard CSS here */
+
+.dashboard{
+...
+}
