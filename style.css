@@ -413,3 +413,58 @@ color:#fff;
 .quick-card h3{
 margin-bottom:10px;
 }
+.latest-opportunities{
+padding:60px 20px;
+}
+
+.latest-opportunities h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.opportunity-list{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.opportunity-item{
+display:flex;
+align-items:center;
+gap:15px;
+background:#fff;
+padding:18px;
+border-radius:12px;
+box-shadow:0 5px 12px rgba(0,0,0,.1);
+}
+
+.dark-mode .opportunity-item{
+background:#222;
+color:#fff;
+}
+
+.badge{
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+color:white;
+min-width:110px;
+text-align:center;
+}
+
+.job{
+background:#007bff;
+}
+
+.learnership{
+background:#28a745;
+}
+
+.internship{
+background:#ff9800;
+}
+
+.bursary{
+background:#9c27b0;
+}
