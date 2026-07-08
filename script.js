@@ -240,3 +240,6 @@ function deleteJob(index) {
 
 
 // Automatically load saved jobs
+document.addEventListener("DOMContentLoaded", function () {
+    displayJobs();
+});
