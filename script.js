@@ -430,3 +430,95 @@ function deleteJob(index) {
     displayJobs();
 
 }
+// ======================================================
+// PART 3/3
+// JOB SEARCH + UTILITIES
+// ======================================================
+
+// View Job
+function viewJob(jobTitle) {
+
+    alert("Opening application for:\n\n" + jobTitle);
+
+}
+
+// ======================================================
+// LIVE JOB SEARCH
+// ======================================================
+
+const searchInput = document.getElementById("searchInput");
+
+if (searchInput) {
+
+    searchInput.addEventListener("keyup", function () {
+
+        const value = searchInput.value.toLowerCase();
+
+        const jobs = document.querySelectorAll(".job-card");
+
+        jobs.forEach(function (job) {
+
+            const text = job.textContent.toLowerCase();
+
+            if (text.includes(value)) {
+
+                job.style.display = "block";
+
+            } else {
+
+                job.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+}
+
+// ======================================================
+// HELPERS
+// ======================================================
+
+function showSuccess(message) {
+
+    alert("✅ " + message);
+
+}
+
+function showError(message) {
+
+    alert("❌ " + message);
+
+}
+
+// ======================================================
+// FUTURE FEATURES
+// ======================================================
+
+// Placeholder for future API integration
+function loadOnlineJobs() {
+
+    console.log("Online job integration coming soon.");
+
+}
+
+// Placeholder for user accounts
+function loginUser() {
+
+    console.log("Login system coming soon.");
+
+}
+
+// Placeholder for notifications
+function sendNotification(message) {
+
+    console.log("Notification:", message);
+
+}
+
+// ======================================================
+// END OF SCRIPT
+// ======================================================
+
+console.log("SA Career Hub Version 2.0 Loaded Successfully");
