@@ -621,3 +621,36 @@ margin-bottom:10px;
 .welcome-banner p{
 line-height:1.6;
 }
+.job-search{
+margin:25px 0;
+}
+
+.job-search input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+margin-bottom:15px;
+box-sizing:border-box;
+}
+
+.job-filters{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.job-filters select{
+flex:1;
+padding:12px;
+border-radius:10px;
+font-size:16px;
+}
+
+.dark-mode .job-search input,
+.dark-mode .job-filters select{
+background:#222;
+color:white;
+border:1px solid #555;
+}
