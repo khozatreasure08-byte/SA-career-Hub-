@@ -522,3 +522,55 @@ function sendNotification(message) {
 // ======================================================
 
 console.log("SA Career Hub Version 2.0 Loaded Successfully");
+// ======================================
+// Jobs Search & Filters
+// ======================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("searchInput");
+    const provinceFilter = document.getElementById("provinceFilter");
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    // Exit if we're not on the Jobs page
+    if (!searchInput || !provinceFilter || !categoryFilter) {
+        return;
+    }
+
+    function filterJobs() {
+
+        const search = searchInput.value.toLowerCase().trim();
+        const province = provinceFilter.value;
+        const category = categoryFilter.value;
+
+        const jobs = document.querySelectorAll(".job");
+
+        jobs.forEach(function (job) {
+
+            const text = job.textContent.toLowerCase();
+
+            const jobProvince = job.dataset.province;
+            const jobCategory = job.dataset.category;
+
+            const matchesSearch = text.includes(search);
+            const matchesProvince =
+                province === "" || jobProvince === province;
+
+            const matchesCategory =
+                category === "" || jobCategory === category;
+
+            if (matchesSearch && matchesProvince && matchesCategory) {
+                job.style.display = "block";
+            } else {
+                job.style.display = "none";
+            }
+
+        });
+
+    }
+
+    searchInput.addEventListener("input", filterJobs);
+    provinceFilter.addEventListener("change", filterJobs);
+    categoryFilter.addEventListener("change", filterJobs);
+
+});
