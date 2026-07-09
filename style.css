@@ -496,4 +496,41 @@ color:#fff;
 color:#e53935;
 font-weight:bold;
 font-size:18px;
+  
+}
+.trending-companies{
+padding:60px 20px;
+text-align:center;
+}
+
+.company-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.company-card{
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.company-card:hover{
+transform:translateY(-6px);
+}
+
+.dark-mode .company-card{
+background:#222;
+color:#fff;
+}
+
+.company-card button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
 }
