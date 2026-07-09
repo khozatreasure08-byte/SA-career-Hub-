@@ -574,3 +574,26 @@ document.addEventListener("DOMContentLoaded", function () {
     categoryFilter.addEventListener("change", filterJobs);
 
 });
+// ======================================
+// Save Jobs
+// ======================================
+
+function saveJob(jobName) {
+
+    let savedJobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+    if (!savedJobs.includes(jobName)) {
+
+        savedJobs.push(jobName);
+
+        localStorage.setItem("savedJobs", JSON.stringify(savedJobs));
+
+        alert("✅ Job saved successfully!");
+
+    } else {
+
+        alert("⭐ You already saved this job.");
+
+    }
+
+}
