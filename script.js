@@ -669,3 +669,28 @@ function displaySavedJobs() {
 }
 
 document.addEventListener("DOMContentLoaded", displaySavedJobs);
+// ======================================
+// Clear All Saved Jobs
+// ======================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const clearButton = document.getElementById("clearSavedJobsBtn");
+
+    if (!clearButton) return;
+
+    clearButton.addEventListener("click", function () {
+
+        if (confirm("Are you sure you want to delete all saved jobs?")) {
+
+            localStorage.removeItem("savedJobs");
+
+            updateSavedCount();
+
+            displaySavedJobs();
+
+        }
+
+    });
+
+});
