@@ -615,3 +615,39 @@ function updateSavedCount() {
 }
 
 document.addEventListener("DOMContentLoaded", updateSavedCount);
+// ======================================
+// Display Saved Jobs
+// ======================================
+
+function displaySavedJobs() {
+
+    const list = document.getElementById("savedJobsList");
+
+    if (!list) return;
+
+    const savedJobs =
+        JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+    list.innerHTML = "";
+
+    if (savedJobs.length === 0) {
+
+        list.innerHTML = "<li>No saved jobs yet.</li>";
+
+        return;
+
+    }
+
+    savedJobs.forEach(function(job){
+
+        const li = document.createElement("li");
+
+        li.textContent = job;
+
+        list.appendChild(li);
+
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", displaySavedJobs);
