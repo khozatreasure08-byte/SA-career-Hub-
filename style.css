@@ -677,3 +677,26 @@ background:#2b2b2b;
 color:white;
 
 }
+#clearSavedJobsBtn{
+
+padding:12px 20px;
+
+margin:15px 0 20px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+.dark-mode #clearSavedJobsBtn{
+
+background:#333;
+
+color:white;
+
+}
