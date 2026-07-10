@@ -589,7 +589,7 @@ function saveJob(jobName) {
         localStorage.setItem("savedJobs", JSON.stringify(savedJobs));
 
         alert("✅ Job saved successfully!");
-
+updateSavedCount();
     } else {
 
         alert("⭐ You already saved this job.");
