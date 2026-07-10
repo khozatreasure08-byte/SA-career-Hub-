@@ -597,3 +597,21 @@ function saveJob(jobName) {
     }
 
 }
+// ======================================
+// Saved Jobs Counter
+// ======================================
+
+function updateSavedCount() {
+
+    const countElement = document.getElementById("savedCount");
+
+    if (!countElement) return;
+
+    const savedJobs =
+        JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+    countElement.textContent = savedJobs.length;
+
+}
+
+document.addEventListener("DOMContentLoaded", updateSavedCount);
