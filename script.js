@@ -638,15 +638,33 @@ function displaySavedJobs() {
 
     }
 
-    savedJobs.forEach(function(job){
+    savedJobs.forEach(function(job, index){
 
-        const li = document.createElement("li");
+    const li = document.createElement("li");
 
-        li.textContent = job;
+    li.textContent = job + " ";
 
-        list.appendChild(li);
+    const deleteButton = document.createElement("button");
 
-    });
+    deleteButton.textContent = "🗑️ Delete";
+
+    deleteButton.onclick = function(){
+
+        savedJobs.splice(index, 1);
+
+        localStorage.setItem("savedJobs", JSON.stringify(savedJobs));
+
+        updateSavedCount();
+
+        displaySavedJobs();
+
+    };
+
+    li.appendChild(deleteButton);
+
+    list.appendChild(li);
+
+});
 
 }
 
