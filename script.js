@@ -694,3 +694,56 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+// ======================================
+// Learnership Search & Filters
+// ======================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("learnershipSearch");
+    const provinceFilter = document.getElementById("learnershipProvince");
+    const categoryFilter = document.getElementById("learnershipCategory");
+
+    if (!searchInput || !provinceFilter || !categoryFilter) {
+        return;
+    }
+
+    function filterLearnerships() {
+
+        const search = searchInput.value.toLowerCase().trim();
+        const province = provinceFilter.value;
+        const category = categoryFilter.value;
+
+        const learnerships = document.querySelectorAll(".job");
+
+        learnerships.forEach(function (card) {
+
+            const text = card.textContent.toLowerCase();
+            const cardProvince = card.dataset.province;
+            const cardCategory = card.dataset.category;
+
+            const matchesSearch = text.includes(search);
+            const matchesProvince =
+                province === "" ||
+                province === "Nationwide" ||
+                cardProvince === province;
+
+            const matchesCategory =
+                category === "" ||
+                cardCategory === category;
+
+            if (matchesSearch && matchesProvince && matchesCategory) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    }
+
+    searchInput.addEventListener("input", filterLearnerships);
+    provinceFilter.addEventListener("change", filterLearnerships);
+    categoryFilter.addEventListener("change", filterLearnerships);
+
+});
