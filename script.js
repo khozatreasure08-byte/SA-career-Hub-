@@ -747,3 +747,30 @@ document.addEventListener("DOMContentLoaded", function () {
     categoryFilter.addEventListener("change", filterLearnerships);
 
 });
+// ======================================
+// Save Learnerships
+// ======================================
+
+function saveLearnership(learnershipName) {
+
+    let savedLearnerships =
+        JSON.parse(localStorage.getItem("savedLearnerships")) || [];
+
+    if (!savedLearnerships.includes(learnershipName)) {
+
+        savedLearnerships.push(learnershipName);
+
+        localStorage.setItem(
+            "savedLearnerships",
+            JSON.stringify(savedLearnerships)
+        );
+
+        alert("✅ Learnership saved successfully!");
+
+    } else {
+
+        alert("⭐ You already saved this learnership.");
+
+    }
+
+}
