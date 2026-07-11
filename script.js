@@ -766,6 +766,7 @@ function saveLearnership(learnershipName) {
         );
 
         alert("✅ Learnership saved successfully!");
+        updateSavedLearnershipCount();
 
     } else {
 
