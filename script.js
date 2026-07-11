@@ -810,3 +810,21 @@ function displaySavedLearnerships() {
 }
 
 document.addEventListener("DOMContentLoaded", displaySavedLearnerships);
+// ======================================
+// Saved Learnership Counter
+// ======================================
+
+function updateSavedLearnershipCount() {
+
+    const count = document.getElementById("savedLearnershipCount");
+
+    if (!count) return;
+
+    const savedLearnerships =
+        JSON.parse(localStorage.getItem("savedLearnerships")) || [];
+
+    count.textContent = savedLearnerships.length;
+
+}
+
+document.addEventListener("DOMContentLoaded", updateSavedLearnershipCount);
