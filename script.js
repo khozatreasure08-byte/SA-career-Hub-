@@ -798,15 +798,36 @@ function displaySavedLearnerships() {
 
     }
 
-    savedLearnerships.forEach(function(item){
+    savedLearnerships.forEach(function(item, index){
 
-        const li = document.createElement("li");
+    const li = document.createElement("li");
 
-        li.textContent = item;
+    li.textContent = item + " ";
 
-        list.appendChild(li);
+    const deleteButton = document.createElement("button");
 
-    });
+    deleteButton.textContent = "🗑️ Delete";
+
+    deleteButton.onclick = function(){
+
+        savedLearnerships.splice(index, 1);
+
+        localStorage.setItem(
+            "savedLearnerships",
+            JSON.stringify(savedLearnerships)
+        );
+
+        updateSavedLearnershipCount();
+
+        displaySavedLearnerships();
+
+    };
+
+    li.appendChild(deleteButton);
+
+    list.appendChild(li);
+
+});
 
 }
 
