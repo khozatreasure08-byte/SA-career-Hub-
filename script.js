@@ -774,3 +774,39 @@ function saveLearnership(learnershipName) {
     }
 
 }
+// ======================================
+// Display Saved Learnerships
+// ======================================
+
+function displaySavedLearnerships() {
+
+    const list = document.getElementById("savedLearnershipsList");
+
+    if (!list) return;
+
+    const savedLearnerships =
+        JSON.parse(localStorage.getItem("savedLearnerships")) || [];
+
+    list.innerHTML = "";
+
+    if (savedLearnerships.length === 0) {
+
+        list.innerHTML = "<li>No saved learnerships yet.</li>";
+
+        return;
+
+    }
+
+    savedLearnerships.forEach(function(item){
+
+        const li = document.createElement("li");
+
+        li.textContent = item;
+
+        list.appendChild(li);
+
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", displaySavedLearnerships);
