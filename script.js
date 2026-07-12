@@ -927,6 +927,7 @@ function saveInternship(internshipName){
         );
 
         alert("✅ Internship saved successfully!");
+        updateSavedInternshipCount();
 
     }else{
 
