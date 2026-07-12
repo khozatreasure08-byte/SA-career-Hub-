@@ -850,3 +850,61 @@ function updateSavedLearnershipCount() {
 }
 
 document.addEventListener("DOMContentLoaded", updateSavedLearnershipCount);
+// ======================================
+// Internship Search & Filters
+// ======================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("internshipSearch");
+    const provinceFilter = document.getElementById("internshipProvince");
+    const categoryFilter = document.getElementById("internshipCategory");
+
+    if (!searchInput || !provinceFilter || !categoryFilter) {
+        return;
+    }
+
+    function filterInternships() {
+
+        const search = searchInput.value.toLowerCase().trim();
+        const province = provinceFilter.value;
+        const category = categoryFilter.value;
+
+        const internships = document.querySelectorAll(".job");
+
+        internships.forEach(function(card){
+
+            const text = card.textContent.toLowerCase();
+            const cardProvince = card.dataset.province;
+            const cardCategory = card.dataset.category;
+
+            const matchesSearch = text.includes(search);
+
+            const matchesProvince =
+                province === "" ||
+                province === "Nationwide" ||
+                cardProvince === province;
+
+            const matchesCategory =
+                category === "" ||
+                cardCategory === category;
+
+            if(matchesSearch && matchesProvince && matchesCategory){
+
+                card.style.display = "block";
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+    searchInput.addEventListener("input", filterInternships);
+    provinceFilter.addEventListener("change", filterInternships);
+    categoryFilter.addEventListener("change", filterInternships);
+
+});
