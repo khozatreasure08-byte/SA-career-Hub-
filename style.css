@@ -797,3 +797,66 @@ border-radius:6px;
 cursor:pointer;
 
 }
+/* ==========================
+   Professional Navigation
+========================== */
+
+nav{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+background:#0d6efd;
+
+padding:15px;
+
+border-radius:12px;
+
+margin:20px auto;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+padding:10px 16px;
+
+border-radius:8px;
+
+font-weight:bold;
+
+transition:0.3s;
+
+}
+
+nav a:hover{
+
+background:white;
+
+color:#0d6efd;
+
+}
+
+.dark-mode nav{
+
+background:#1b1b1b;
+
+}
+
+.dark-mode nav a:hover{
+
+background:#444;
+
+color:white;
+
+}
