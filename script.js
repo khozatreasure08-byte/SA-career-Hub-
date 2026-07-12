@@ -908,3 +908,30 @@ document.addEventListener("DOMContentLoaded", function () {
     categoryFilter.addEventListener("change", filterInternships);
 
 });
+// ======================================
+// Save Internships
+// ======================================
+
+function saveInternship(internshipName){
+
+    let savedInternships =
+        JSON.parse(localStorage.getItem("savedInternships")) || [];
+
+    if(!savedInternships.includes(internshipName)){
+
+        savedInternships.push(internshipName);
+
+        localStorage.setItem(
+            "savedInternships",
+            JSON.stringify(savedInternships)
+        );
+
+        alert("✅ Internship saved successfully!");
+
+    }else{
+
+        alert("⭐ You already saved this internship.");
+
+    }
+
+}
