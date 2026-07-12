@@ -935,3 +935,21 @@ function saveInternship(internshipName){
     }
 
 }
+// ======================================
+// Saved Internship Counter
+// ======================================
+
+function updateSavedInternshipCount() {
+
+    const count = document.getElementById("savedInternshipCount");
+
+    if (!count) return;
+
+    const savedInternships =
+        JSON.parse(localStorage.getItem("savedInternships")) || [];
+
+    count.textContent = savedInternships.length;
+
+}
+
+document.addEventListener("DOMContentLoaded", updateSavedInternshipCount);
