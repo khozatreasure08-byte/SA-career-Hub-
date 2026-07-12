@@ -954,3 +954,52 @@ function updateSavedInternshipCount() {
 }
 
 document.addEventListener("DOMContentLoaded", updateSavedInternshipCount);
+// ======================================
+// Display Saved Internships
+// ======================================
+
+function displaySavedInternships(){
+
+    const list = document.getElementById("savedInternshipsList");
+
+    if(!list) return;
+
+    list.innerHTML = "";
+
+    let savedInternships =
+        JSON.parse(localStorage.getItem("savedInternships")) || [];
+
+    savedInternships.forEach(function(item, index){
+
+        const li = document.createElement("li");
+
+        li.textContent = item + " ";
+
+        const deleteButton = document.createElement("button");
+
+        deleteButton.textContent = "🗑️ Delete";
+
+        deleteButton.onclick = function(){
+
+            savedInternships.splice(index,1);
+
+            localStorage.setItem(
+                "savedInternships",
+                JSON.stringify(savedInternships)
+            );
+
+            updateSavedInternshipCount();
+
+            displaySavedInternships();
+
+        };
+
+        li.appendChild(deleteButton);
+
+        list.appendChild(li);
+
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", displaySavedInternships);
