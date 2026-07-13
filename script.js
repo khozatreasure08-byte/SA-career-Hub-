@@ -1071,3 +1071,59 @@ document.addEventListener(
 // ======================================================
 
 console.log("✅ SA Career Hub Version 2.1 Loaded Successfully");
+// ======================================================
+// DASHBOARD COUNTERS
+// ======================================================
+
+function updateDashboard() {
+
+    // Saved Jobs
+    const savedJobs =
+        JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+    const jobsElement =
+        document.getElementById("dashboardSavedJobs");
+
+    if (jobsElement) {
+        jobsElement.textContent = savedJobs.length;
+    }
+
+    // Saved Learnerships
+    const savedLearnerships =
+        JSON.parse(localStorage.getItem("savedLearnerships")) || [];
+
+    const learnershipElement =
+        document.getElementById("dashboardLearnerships");
+
+    if (learnershipElement) {
+        learnershipElement.textContent = savedLearnerships.length;
+    }
+
+    // Saved Internships
+    const savedInternships =
+        JSON.parse(localStorage.getItem("savedInternships")) || [];
+
+    const internshipElement =
+        document.getElementById("dashboardInternships");
+
+    if (internshipElement) {
+        internshipElement.textContent = savedInternships.length;
+    }
+
+    // Job Tracker
+    const trackedJobs =
+        JSON.parse(localStorage.getItem("jobTracker")) || [];
+
+    const trackerElement =
+        document.getElementById("dashboardApplications");
+
+    if (trackerElement) {
+        trackerElement.textContent = trackedJobs.length;
+    }
+
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    updateDashboard
+);
