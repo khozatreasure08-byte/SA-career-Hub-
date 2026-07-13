@@ -295,14 +295,64 @@ input,select{
 }
 /* Your existing CSS */
 
-.footer{
-    ...
+.dashboard{
+
+padding:40px 20px;
+
+text-align:center;
+
 }
 
-/* 👇 Paste the Dashboard CSS here */
+.dashboard-grid{
 
-.dashboard{
-...
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+margin-top:25px;
+
+}
+
+.dashboard-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+text-align:center;
+
+}
+
+.dark-mode .dashboard-card{
+
+background:#222;
+
+color:white;
+
+}
+
+.dashboard-card h3{
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+color:#0d6efd;
+
+}
+
+.dashboard-card p{
+
+margin:0;
+
+font-size:16px;
+
 }
 .stats{
 padding:60px 20px;
