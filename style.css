@@ -971,3 +971,26 @@ background:#222;
 color:white;
 
 }
+/* ==========================
+   Closing Soon Badge
+========================== */
+
+.closing-soon{
+
+display:inline-block;
+
+margin:10px 0;
+
+padding:6px 12px;
+
+background:#e53935;
+
+color:white;
+
+font-size:14px;
+
+font-weight:bold;
+
+border-radius:20px;
+
+}
