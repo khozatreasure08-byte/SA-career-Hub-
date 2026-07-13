@@ -974,14 +974,13 @@ color:white;
 /* ==========================
    Closing Soon Badge
 ========================== */
-
 .closing-soon{
 
 display:inline-block;
 
 margin:10px 0;
 
-padding:6px 12px;
+padding:8px 14px;
 
 background:#e53935;
 
@@ -991,6 +990,33 @@ font-size:14px;
 
 font-weight:bold;
 
-border-radius:20px;
+border-radius:25px;
+
+box-shadow:0 3px 8px rgba(0,0,0,.2);
+
+animation:pulse 2s infinite;
 
 }
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
