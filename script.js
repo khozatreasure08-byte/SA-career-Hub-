@@ -1008,6 +1008,7 @@ document.addEventListener(
 // ======================================================
 
 function displaySavedInternships(){
+    function deleteSavedInternship(index){ let saved = JSON.parse(localStorage.getItem("savedInternships")) || []; saved.splice(index,1); localStorage.setItem( "savedInternships", JSON.stringify(saved) ); updateSavedInternshipCount(); displaySavedInternships(); }
 
     const list =
         document.getElementById("savedInternshipsList");
