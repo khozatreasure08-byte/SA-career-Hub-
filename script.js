@@ -1028,36 +1028,7 @@ function displaySavedInternships(){
 
     }
 
-    saved.forEach(function(item,index){
-
-        const li=document.createElement("li");
-
-        li.textContent=item+" ";
-
-        const btn=document.createElement("button");
-
-        btn.textContent="🗑️ Delete";
-
-        btn.onclick=function(){
-
-            saved.splice(index,1);
-
-            localStorage.setItem(
-                "savedInternships",
-                JSON.stringify(saved)
-            );
-
-            updateSavedInternshipCount();
-
-            displaySavedInternships();
-
-        };
-
-        li.appendChild(btn);
-
-        list.appendChild(li);
-
-    });
+    saved.forEach(function(item,index){ const card = document.createElement("div"); card.className = "job"; card.innerHTML =         <h3>${item}</h3>         <button onclick="deleteSavedInternship(${index})">             🗑️ Delete         </button>    ; list.appendChild(card);
 
 }
 
