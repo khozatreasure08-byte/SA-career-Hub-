@@ -308,3 +308,21 @@ function saveInternship(title) {
 
     alert("Internship saved successfully!");
 }
+// ===============================
+// SAVED INTERNSHIP COUNTER
+// ===============================
+
+function updateSavedInternshipCounter() {
+    const counter = document.getElementById("savedInternshipCount");
+
+    if (counter) {
+        const savedInternships =
+            JSON.parse(localStorage.getItem("savedInternships")) || [];
+
+        counter.textContent = savedInternships.length;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateSavedInternshipCounter();
+});
