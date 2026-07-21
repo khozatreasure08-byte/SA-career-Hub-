@@ -229,3 +229,65 @@ function saveSavedJob(jobTitle) {
 document.addEventListener("DOMContentLoaded", () => {
     updateSavedCounter();
 });
+/* ==========================================
+   PART 2B - SAVED JOBS PAGE
+========================================== */
+
+function displaySavedJobs() {
+
+    const savedJobsList = document.getElementById("savedJobsList");
+
+    if (!savedJobsList) return;
+
+    savedJobsList.innerHTML = "";
+
+    const savedJobs = getSavedJobs();
+
+    if (savedJobs.length === 0) {
+
+        savedJobsList.innerHTML =
+            "<li>No saved jobs yet.</li>";
+
+        return;
+    }
+
+    savedJobs.forEach(job => {
+
+        const li = document.createElement("li");
+
+        li.textContent = job;
+
+        savedJobsList.appendChild(li);
+
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    displaySavedJobs();
+
+    const clearBtn =
+        document.getElementById("clearSavedJobsBtn");
+
+    if (clearBtn) {
+
+        clearBtn.addEventListener("click", () => {
+
+            if (confirm("Clear all saved jobs?")) {
+
+                localStorage.removeItem("savedJobs");
+
+                displaySavedJobs();
+
+                updateSavedCounter();
+
+                alert("✅ Saved jobs cleared.");
+
+            }
+
+        });
+
+    }
+
+});
