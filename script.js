@@ -291,3 +291,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+// ===============================
+// SAVE INTERNSHIP
+// ===============================
+
+function saveInternship(title) {
+    let savedInternships = JSON.parse(localStorage.getItem("savedInternships")) || [];
+
+    if (savedInternships.includes(title)) {
+        alert("This internship is already saved!");
+        return;
+    }
+
+    savedInternships.push(title);
+    localStorage.setItem("savedInternships", JSON.stringify(savedInternships));
+
+    alert("Internship saved successfully!");
+}
