@@ -326,3 +326,46 @@ function updateSavedInternshipCounter() {
 document.addEventListener("DOMContentLoaded", () => {
     updateSavedInternshipCounter();
 });
+// ===============================
+// SAVE LEARNERSHIP
+// ===============================
+
+function saveLearnership(title) {
+    let savedLearnerships =
+        JSON.parse(localStorage.getItem("savedLearnerships")) || [];
+
+    if (savedLearnerships.includes(title)) {
+        alert("This learnership is already saved!");
+        return;
+    }
+
+    savedLearnerships.push(title);
+
+    localStorage.setItem(
+        "savedLearnerships",
+        JSON.stringify(savedLearnerships)
+    );
+
+    updateSavedLearnershipCounter();
+
+    alert("✅ Learnership saved successfully!");
+}
+
+// ===============================
+// SAVED LEARNERSHIP COUNTER
+// ===============================
+
+function updateSavedLearnershipCounter() {
+    const counter = document.getElementById("savedLearnershipCount");
+
+    if (counter) {
+        const savedLearnerships =
+            JSON.parse(localStorage.getItem("savedLearnerships")) || [];
+
+        counter.textContent = savedLearnerships.length;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateSavedLearnershipCounter();
+});
