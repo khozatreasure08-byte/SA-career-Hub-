@@ -434,3 +434,31 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 });
+// ===============================
+// CLEAR SAVED LEARNERSHIPS
+// ===============================
+
+function clearSavedLearnerships() {
+
+    if (confirm("Clear all saved learnerships?")) {
+
+        localStorage.removeItem("savedLearnerships");
+
+        const savedList =
+            document.getElementById("savedLearnershipsList");
+
+        if (savedList) {
+            savedList.innerHTML =
+                "<li>No saved learnerships yet.</li>";
+        }
+
+        const counter =
+            document.getElementById("savedLearnershipCount");
+
+        if (counter) {
+            counter.textContent = "0";
+        }
+
+        alert("✅ Saved learnerships cleared!");
+    }
+        }
