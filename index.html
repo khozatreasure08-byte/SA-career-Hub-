@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+">
 
 <header>
 
