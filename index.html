@@ -19,7 +19,13 @@
 
     <p>Your Gateway to Jobs, Learnerships, Internships & Bursaries</p>
 
-    <button id="darkModeBtn" onclick="document.body.classList.toggle('dark-mode')">
+    <button id="darkModeBtn" onclick="
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem(
+        'theme',
+        document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+    );
+">
     🌙 Dark Mode
     </button>
 
