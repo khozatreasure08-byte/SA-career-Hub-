@@ -426,4 +426,4 @@ function clearSavedLearnerships() {
 
         alert("✅ Saved learnerships cleared!");
     }
-        }
+        
