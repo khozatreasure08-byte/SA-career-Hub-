@@ -369,3 +369,32 @@ function updateSavedLearnershipCounter() {
 document.addEventListener("DOMContentLoaded", () => {
     updateSavedLearnershipCounter();
 });
+// ===============================
+// DISPLAY SAVED LEARNERSHIPS
+// ===============================
+
+function displaySavedLearnerships() {
+    const savedList = document.getElementById("savedLearnershipsList");
+
+    if (!savedList) return;
+
+    savedList.innerHTML = "";
+
+    const savedLearnerships =
+        JSON.parse(localStorage.getItem("savedLearnerships")) || [];
+
+    if (savedLearnerships.length === 0) {
+        savedList.innerHTML = "<li>No saved learnerships yet.</li>";
+        return;
+    }
+
+    savedLearnerships.forEach(learnership => {
+        const li = document.createElement("li");
+        li.textContent = learnership;
+        savedList.appendChild(li);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    displaySavedLearnerships();
+});
