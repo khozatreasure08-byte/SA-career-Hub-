@@ -398,42 +398,7 @@ function displaySavedLearnerships() {
 document.addEventListener("DOMContentLoaded", () => {
     displaySavedLearnerships();
 });
-// ===============================
-// CLEAR SAVED LEARNERSHIPS
-// ===============================
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const clearBtn = document.getElementById("clearSavedLearnershipsBtn");
-
-    if (!clearBtn) return;
-
-    clearBtn.onclick = function () {
-
-        if (confirm("Clear all saved learnerships?")) {
-
-            localStorage.removeItem("savedLearnerships");
-
-            const savedList =
-                document.getElementById("savedLearnershipsList");
-
-            if (savedList) {
-                savedList.innerHTML =
-                    "<li>No saved learnerships yet.</li>";
-            }
-
-            const counter =
-                document.getElementById("savedLearnershipCount");
-
-            if (counter) {
-                counter.textContent = "0";
-            }
-
-            alert("✅ Saved learnerships cleared!");
-        }
-    };
-
-});
 // ===============================
 // CLEAR SAVED LEARNERSHIPS
 // ===============================
