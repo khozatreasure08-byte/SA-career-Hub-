@@ -398,3 +398,33 @@ function displaySavedLearnerships() {
 document.addEventListener("DOMContentLoaded", () => {
     displaySavedLearnerships();
 });
+// ===============================
+// CLEAR SAVED LEARNERSHIPS
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const clearBtn =
+        document.getElementById("clearSavedLearnershipsBtn");
+
+    if (clearBtn) {
+
+        clearBtn.addEventListener("click", () => {
+
+            if (confirm("Clear all saved learnerships?")) {
+
+                localStorage.removeItem("savedLearnerships");
+
+                displaySavedLearnerships();
+
+                updateSavedLearnershipCounter();
+
+                alert("✅ Saved learnerships cleared.");
+
+            }
+
+        });
+
+    }
+
+});
