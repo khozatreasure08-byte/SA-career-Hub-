@@ -402,29 +402,35 @@ document.addEventListener("DOMContentLoaded", () => {
 // CLEAR SAVED LEARNERSHIPS
 // ===============================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const clearBtn =
-        document.getElementById("clearSavedLearnershipsBtn");
+    const clearBtn = document.getElementById("clearSavedLearnershipsBtn");
 
-    if (clearBtn) {
+    if (!clearBtn) return;
 
-        clearBtn.addEventListener("click", () => {
+    clearBtn.onclick = function () {
 
-            if (confirm("Clear all saved learnerships?")) {
+        if (confirm("Clear all saved learnerships?")) {
 
-                localStorage.removeItem("savedLearnerships");
+            localStorage.removeItem("savedLearnerships");
 
-                displaySavedLearnerships();
+            const savedList =
+                document.getElementById("savedLearnershipsList");
 
-                updateSavedLearnershipCounter();
-
-                alert("✅ Saved learnerships cleared.");
-
+            if (savedList) {
+                savedList.innerHTML =
+                    "<li>No saved learnerships yet.</li>";
             }
 
-        });
+            const counter =
+                document.getElementById("savedLearnershipCount");
 
-    }
+            if (counter) {
+                counter.textContent = "0";
+            }
+
+            alert("✅ Saved learnerships cleared!");
+        }
+    };
 
 });
