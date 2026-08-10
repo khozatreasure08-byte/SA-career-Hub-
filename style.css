@@ -1019,4 +1019,56 @@ transform:scale(1);
 }
 
 }
+/* ===============================
+   DARK MODE - FINAL FIX
+   =============================== */
 
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode main,
+body.dark-mode section {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-box,
+body.dark-mode .featured-card,
+body.dark-mode .quick-card,
+body.dark-mode .company-card,
+body.dark-mode .deadline-card,
+body.dark-mode .dashboard-card,
+body.dark-mode .opportunity-item,
+body.dark-mode .welcome-banner,
+body.dark-mode .career-tip {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p {
+    color: #ffffff;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border-color: #666666 !important;
+}
+
+body.dark-mode nav {
+    background-color: #1b1b1b !important;
+}
+
+body.dark-mode footer {
+    background-color: #0d0d0d !important;
+    color: #ffffff !important;
+}
