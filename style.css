@@ -1072,3 +1072,68 @@ body.dark-mode footer {
     background-color: #0d0d0d !important;
     color: #ffffff !important;
 }
+/* ===============================
+   SA CAREER HUB DARK MODE FIX
+   =============================== */
+
+body.dark-mode {
+    background: #121212 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode .hero,
+body.dark-mode .features,
+body.dark-mode .stats,
+body.dark-mode .dashboard,
+body.dark-mode .featured-jobs,
+body.dark-mode .quick-actions,
+body.dark-mode .latest-opportunities,
+body.dark-mode .deadline-section,
+body.dark-mode .trending-companies,
+body.dark-mode .category-search,
+body.dark-mode .quick-access {
+    background: #121212 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-box,
+body.dark-mode .stat-card,
+body.dark-mode .dashboard-card,
+body.dark-mode .featured-card,
+body.dark-mode .quick-card,
+body.dark-mode .opportunity-item,
+body.dark-mode .deadline-card,
+body.dark-mode .company-card,
+body.dark-mode .welcome-banner {
+    background: #222222 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p,
+body.dark-mode li {
+    color: #ffffff !important;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #333333 !important;
+    color: #ffffff !important;
+    border-color: #666666 !important;
+}
+
+body.dark-mode nav {
+    background: #1b1b1b !important;
+}
+
+body.dark-mode footer {
+    background: #0d0d0d !important;
+    color: #ffffff !important;
+}
