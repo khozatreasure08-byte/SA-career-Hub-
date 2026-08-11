@@ -858,3 +858,76 @@ function saveBursary(title) {
     );
 
 }
+function displaySavedBursaries() {
+
+    const savedList =
+        document.getElementById("savedBursariesList");
+
+    if (!savedList) return;
+
+    const savedBursaries =
+        getSavedBursaries();
+
+    savedList.innerHTML = "";
+
+    if (savedBursaries.length === 0) {
+
+        savedList.innerHTML =
+            "<li>No saved bursaries yet.</li>";
+
+        return;
+    }
+
+    savedBursaries.forEach(function (bursary) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = bursary;
+
+        savedList.appendChild(li);
+
+    });
+}
+
+
+function clearSavedBursaries() {
+
+    if (!confirm(
+        "Clear all saved bursaries?"
+    )) {
+        return;
+    }
+
+    localStorage.removeItem(
+        "savedBursaries"
+    );
+
+    displaySavedBursaries();
+
+    alert(
+        "✅ Saved bursaries cleared!"
+    );
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        displaySavedBursaries();
+
+        const clearBursariesBtn =
+            document.getElementById(
+                "clearSavedBursariesBtn"
+            );
+
+        if (clearBursariesBtn) {
+
+            clearBursariesBtn.onclick =
+                clearSavedBursaries;
+
+        }
+
+    }
+);
