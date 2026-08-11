@@ -818,3 +818,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+/* =====================================================
+   SAVE BURSARIES
+   ===================================================== */
+
+function getSavedBursaries() {
+
+    return JSON.parse(
+        localStorage.getItem("savedBursaries")
+    ) || [];
+
+}
+
+
+function saveBursary(title) {
+
+    let savedBursaries =
+        getSavedBursaries();
+
+    if (savedBursaries.includes(title)) {
+
+        alert(
+            "This bursary is already saved!"
+        );
+
+        return;
+
+    }
+
+    savedBursaries.push(title);
+
+    localStorage.setItem(
+        "savedBursaries",
+        JSON.stringify(savedBursaries)
+    );
+
+    alert(
+        "✅ Bursary saved successfully!"
+    );
+
+}
