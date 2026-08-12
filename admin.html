@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel | SA Career Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<img src="logo.png" class="logo" alt="Logo">
+
+<h1>⚙️ SA Career Hub Admin Panel</h1>
+
+<p>Manage jobs, learnerships, internships and bursaries.</p>
+
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="admin.html">Admin</a>
+</nav>
+
+<section class="card">
+
+<h2>Add New Job</h2>
+
+<input
+id="jobTitle"
+type="text"
+placeholder="Job Title">
+
+<input
+id="jobCompany"
+type="text"
+placeholder="Company">
+
+<input
+id="jobLocation"
+type="text"
+placeholder="Location">
+
+<button onclick="addJob()">
+➕ Add Job
+</button>
+
+</section>
+
+<section class="card">
+
+<h2>Admin Jobs</h2>
+
+<ul id="adminJobsList"></ul>
+
+</section>
+
+<footer>
+
+<p>© 2026 SA Career Hub</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
