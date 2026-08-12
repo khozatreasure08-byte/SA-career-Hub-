@@ -931,3 +931,21 @@ document.addEventListener(
 
     }
 );
+function updateDashboard() {
+
+    const jobs = getSavedJobs().length;
+    const learnerships = getSavedLearnerships().length;
+    const internships = getSavedInternships().length;
+
+    const jobsBox = document.getElementById("dashboardSavedJobs");
+    const learnershipsBox = document.getElementById("dashboardLearnerships");
+    const internshipsBox = document.getElementById("dashboardInternships");
+
+    if (jobsBox) jobsBox.textContent = jobs;
+    if (learnershipsBox) learnershipsBox.textContent = learnerships;
+    if (internshipsBox) internshipsBox.textContent = internships;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateDashboard();
+});
