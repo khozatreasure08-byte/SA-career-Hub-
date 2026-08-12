@@ -941,6 +941,7 @@ function updateDashboard() {
     const jobsBox = document.getElementById("dashboardSavedJobs");
     const learnershipsBox = document.getElementById("dashboardLearnerships");
     const internshipsBox = document.getElementById("dashboardInternships");
+   const bursariesBox = document.getElementById("dashboardBursaries");
 
     if (jobsBox) jobsBox.textContent = jobs;
     if (learnershipsBox) learnershipsBox.textContent = learnerships;
