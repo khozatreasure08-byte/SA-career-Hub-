@@ -946,6 +946,7 @@ function updateDashboard() {
     if (jobsBox) jobsBox.textContent = jobs;
     if (learnershipsBox) learnershipsBox.textContent = learnerships;
     if (internshipsBox) internshipsBox.textContent = internships;
+   if (bursariesBox) bursariesBox.textContent = bursaries;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
