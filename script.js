@@ -952,3 +952,91 @@ function updateDashboard() {
 document.addEventListener("DOMContentLoaded", function () {
     updateDashboard();
 });
+/* =====================================================
+   APPLICATION TRACKER
+   ===================================================== */
+
+function getApplications() {
+    return JSON.parse(localStorage.getItem("applications")) || [];
+}
+
+function applyForOpportunity(title) {
+
+    let applications = getApplications();
+
+    if (applications.includes(title)) {
+        alert("You have already applied for this opportunity.");
+        return;
+    }
+
+    applications.push(title);
+
+    localStorage.setItem(
+        "applications",
+        JSON.stringify(applications)
+    );
+
+    updateApplicationsCounter();
+
+    alert("✅ Application tracked successfully!");
+}
+
+function displayApplications() {
+
+    const list = document.getElementById("applicationsList");
+
+    if (!list) return;
+
+    const applications = getApplications();
+
+    list.innerHTML = "";
+
+    if (applications.length === 0) {
+        list.innerHTML = "<li>No applications tracked yet.</li>";
+        return;
+    }
+
+    applications.forEach(function(item) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+    });
+}
+
+function clearApplications() {
+
+    if (!confirm("Clear all tracked applications?")) {
+        return;
+    }
+
+    localStorage.removeItem("applications");
+
+    displayApplications();
+
+    updateApplicationsCounter();
+
+    alert("✅ Applications cleared!");
+}
+
+function updateApplicationsCounter() {
+
+    const counter = document.getElementById("dashboardApplications");
+
+    if (counter) {
+        counter.textContent = getApplications().length;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    updateApplicationsCounter();
+
+    displayApplications();
+
+    const btn = document.getElementById("clearApplicationsBtn");
+
+    if (btn) {
+        btn.onclick = clearApplications;
+    }
+
+});
