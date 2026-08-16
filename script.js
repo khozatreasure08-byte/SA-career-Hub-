@@ -1107,6 +1107,9 @@ function displayAdminJobs() {
     job.company + "<br>" +
     job.location +
     "<br><br>" +
+
+    "<button onclick='editAdminJob(" + index + ")'>✏️ Edit</button> " +
+
     "<button onclick='deleteAdminJob(" + index + ")'>🗑️ Delete</button>";
 
         list.appendChild(li);
