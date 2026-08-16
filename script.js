@@ -1218,9 +1218,9 @@ function displayWebsiteJobs() {
             <p><strong>Company:</strong> ${job.company}</p>
             <p><strong>Location:</strong> ${job.location}</p>
 
-            <button onclick="saveJob('${job.title}')">
-                ❤️ Save Job
-            </button>
+         <button onclick="saveJob('${job.title}')">
+    ❤️ Save Job
+</button>
 
             <button onclick="applyForOpportunity('${job.title}')">
                 📩 Apply
