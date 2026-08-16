@@ -1116,78 +1116,7 @@ function displayAdminJobs() {
 document.addEventListener("DOMContentLoaded", function () {
     displayAdminJobs();
 });
-/* =====================================================
-   ADMIN PANEL
-   ===================================================== */
 
-function getAdminJobs() {
-    return JSON.parse(localStorage.getItem("adminJobs")) || [];
-}
-
-function addJob() {
-
-    const title = document.getElementById("jobTitle").value.trim();
-    const company = document.getElementById("jobCompany").value.trim();
-    const location = document.getElementById("jobLocation").value.trim();
-
-    if (!title || !company || !location) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    const jobs = getAdminJobs();
-
-    jobs.push({
-        title,
-        company,
-        location
-    });
-
-    localStorage.setItem("adminJobs", JSON.stringify(jobs));
-
-    document.getElementById("jobTitle").value = "";
-    document.getElementById("jobCompany").value = "";
-    document.getElementById("jobLocation").value = "";
-
-    displayAdminJobs();
-
-    alert("✅ Job added successfully!");
-}
-
-function displayAdminJobs() {
-
-    const list = document.getElementById("adminJobsList");
-
-    if (!list) return;
-
-    const jobs = getAdminJobs();
-
-    list.innerHTML = "";
-
-    if (jobs.length === 0) {
-        list.innerHTML = "<li>No jobs added yet.</li>";
-        return;
-    }
-
-    jobs.forEach((job, index) => {
-
-        const li = document.createElement("li");
-
-        li.innerHTML = `
-            <strong>${job.title}</strong><br>
-            ${job.company}<br>
-            ${job.location}
-        `;
-
-        list.appendChild(li);
-
-    });
-
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    displayAdminJobs();
-});
 /* =====================================================
    SHOW ADMIN JOBS ON JOBS PAGE
    ===================================================== */
