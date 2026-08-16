@@ -1109,7 +1109,13 @@ function displayAdminJobs() {
     "<br><br>" +
     "<button onclick='deleteAdminJob(" + index + ")'>🗑️ Delete</button>";
 
-       function deleteAdminJob(index) {
+        list.appendChild(li);
+
+    });
+
+}
+
+function deleteAdminJob(index) {
 
     let jobs = getAdminJobs();
 
@@ -1123,14 +1129,7 @@ function displayAdminJobs() {
 
     displayAdminJobs();
     displayWebsiteJobs();
-       }
-
-        list.appendChild(li);
-
-    });
-
 }
-
 document.addEventListener("DOMContentLoaded", function () {
     displayAdminJobs();
 });
