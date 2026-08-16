@@ -1098,14 +1098,16 @@ function displayAdminJobs() {
         return;
     }
 
-    jobs.forEach(function(job) {
+    jobs.forEach(function(job, index) {
 
         const li = document.createElement("li");
 
         li.innerHTML =
-            "<strong>" + job.title + "</strong><br>" +
-            job.company + "<br>" +
-            job.location;
+    "<strong>" + job.title + "</strong><br>" +
+    job.company + "<br>" +
+    job.location +
+    "<br><br>" +
+    "<button onclick='deleteAdminJob(" + index + ")'>🗑️ Delete</button>";
 
        function deleteAdminJob(index) {
 
