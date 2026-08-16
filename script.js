@@ -1177,7 +1177,7 @@ function displayWebsiteJobs() {
             <p><strong>Company:</strong> ${job.company}</p>
             <p><strong>Location:</strong> ${job.location}</p>
 
-         <button onclick="saveJob('${job.title}')">
+         <button onclick="saveSavedJob('${job.title}')">
     ❤️ Save Job
 </button>
 
