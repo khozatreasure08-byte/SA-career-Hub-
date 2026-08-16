@@ -1188,3 +1188,51 @@ function displayAdminJobs() {
 document.addEventListener("DOMContentLoaded", function () {
     displayAdminJobs();
 });
+/* =====================================================
+   SHOW ADMIN JOBS ON JOBS PAGE
+   ===================================================== */
+
+function displayWebsiteJobs() {
+
+    const container = document.getElementById("adminJobsContainer");
+
+    if (!container) return;
+
+    const jobs = getAdminJobs();
+
+    container.innerHTML = "";
+
+    if (jobs.length === 0) {
+        container.innerHTML = "<p>No admin jobs available yet.</p>";
+        return;
+    }
+
+    jobs.forEach(function(job) {
+
+        const card = document.createElement("div");
+
+        card.className = "card";
+
+        card.innerHTML = `
+            <h3>${job.title}</h3>
+            <p><strong>Company:</strong> ${job.company}</p>
+            <p><strong>Location:</strong> ${job.location}</p>
+
+            <button onclick="saveJob('${job.title}')">
+                ❤️ Save Job
+            </button>
+
+            <button onclick="applyForOpportunity('${job.title}')">
+                📩 Apply
+            </button>
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    displayWebsiteJobs();
+});
