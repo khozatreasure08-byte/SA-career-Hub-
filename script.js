@@ -1133,6 +1133,16 @@ function deleteAdminJob(index) {
     displayAdminJobs();
     displayWebsiteJobs();
 }
+function editAdminJob(index) {
+
+    const jobs = getAdminJobs();
+
+    document.getElementById("jobTitle").value = jobs[index].title;
+    document.getElementById("jobCompany").value = jobs[index].company;
+    document.getElementById("jobLocation").value = jobs[index].location;
+
+    deleteAdminJob(index);
+}
 document.addEventListener("DOMContentLoaded", function () {
     displayAdminJobs();
 });
