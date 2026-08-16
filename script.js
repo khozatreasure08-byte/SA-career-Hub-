@@ -1107,6 +1107,22 @@ function displayAdminJobs() {
             job.company + "<br>" +
             job.location;
 
+       function deleteAdminJob(index) {
+
+    let jobs = getAdminJobs();
+
+    if (!confirm("Delete this job?")) {
+        return;
+    }
+
+    jobs.splice(index, 1);
+
+    localStorage.setItem("adminJobs", JSON.stringify(jobs));
+
+    displayAdminJobs();
+    displayWebsiteJobs();
+       }
+
         list.appendChild(li);
 
     });
