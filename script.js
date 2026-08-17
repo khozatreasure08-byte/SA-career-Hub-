@@ -1061,24 +1061,41 @@ function addJob() {
 
     let jobs = getAdminJobs();
 
-    jobs.push({
-        title: title,
-        company: company,
-        location: location
-    });
+    const editingIndex = localStorage.getItem("editingJobIndex");
 
-    localStorage.setItem(
-        "adminJobs",
-        JSON.stringify(jobs)
-    );
+    if (editingIndex !== null) {
+
+        // Update existing job
+        jobs[editingIndex] = {
+            title: title,
+            company: company,
+            location: location
+        };
+
+        localStorage.removeItem("editingJobIndex");
+
+        alert("✅ Job updated successfully!");
+
+    } else {
+
+        // Add new job
+        jobs.push({
+            title: title,
+            company: company,
+            location: location
+        });
+
+        alert("✅ Job added successfully!");
+    }
+
+    localStorage.setItem("adminJobs", JSON.stringify(jobs));
 
     document.getElementById("jobTitle").value = "";
     document.getElementById("jobCompany").value = "";
     document.getElementById("jobLocation").value = "";
 
     displayAdminJobs();
-
-    alert("✅ Job added successfully!");
+    displayWebsiteJobs();
 }
 
 function displayAdminJobs() {
