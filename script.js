@@ -1141,7 +1141,10 @@ function editAdminJob(index) {
     document.getElementById("jobCompany").value = jobs[index].company;
     document.getElementById("jobLocation").value = jobs[index].location;
 
-    deleteAdminJob(index);
+    // Remember which job is being edited
+    localStorage.setItem("editingJobIndex", index);
+
+    alert("✏️ You can now edit the job details and press Add Job to save the changes.");
 }
 document.addEventListener("DOMContentLoaded", function () {
     displayAdminJobs();
