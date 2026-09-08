@@ -1054,6 +1054,11 @@ function addJob() {
     const company = document.getElementById("jobCompany").value.trim();
     const location = document.getElementById("jobLocation").value.trim();
 
+   const type = document.getElementById("jobType").value.trim();
+const salary = document.getElementById("jobSalary").value.trim();
+const closingDate = document.getElementById("jobClosingDate").value;
+const applyLink = document.getElementById("jobApplyLink").value.trim();
+
     if (!title || !company || !location) {
         alert("Please complete all fields.");
         return;
