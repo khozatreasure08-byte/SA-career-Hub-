@@ -7,7 +7,11 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+}
+">
 
 <header>
 <img src="logo.png" class="logo" alt="Logo">
