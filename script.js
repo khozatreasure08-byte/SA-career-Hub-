@@ -1203,18 +1203,26 @@ function displayWebsiteJobs() {
         card.className = "card";
 
         card.innerHTML = `
-            <h3>${job.title}</h3>
-            <p><strong>Company:</strong> ${job.company}</p>
-            <p><strong>Location:</strong> ${job.location}</p>
+    <h3>${job.title}</h3>
 
-         <button onclick="saveSavedJob('${job.title}')">
-    ❤️ Save Job
-</button>
+    <p><strong>Company:</strong> ${job.company}</p>
 
-            <button onclick="applyForOpportunity('${job.title}')">
-                📩 Apply
-            </button>
-        `;
+    <p><strong>Location:</strong> ${job.location}</p>
+
+    <p><strong>Job Type:</strong> ${job.type || "Not specified"}</p>
+
+    <p><strong>Salary:</strong> ${job.salary || "Not specified"}</p>
+
+    <p><strong>Closing Date:</strong> ${job.closingDate || "Not specified"}</p>
+
+    <button onclick="saveSavedJob('${job.title}')">
+        ❤️ Save Job
+    </button>
+
+    <button onclick="window.open('${job.applyLink}', '_blank')">
+        📩 Apply Now
+    </button>
+`;
 
         container.appendChild(card);
 
