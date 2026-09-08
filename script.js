@@ -1072,10 +1072,15 @@ const applyLink = document.getElementById("jobApplyLink").value.trim();
 
         // Update existing job
         jobs[editingIndex] = {
-            title: title,
-            company: company,
-            location: location
-        };
+            {
+    title: title,
+    company: company,
+    location: location,
+    type: type,
+    salary: salary,
+    closingDate: closingDate,
+    applyLink: applyLink
+        }
 
         localStorage.removeItem("editingJobIndex");
 
